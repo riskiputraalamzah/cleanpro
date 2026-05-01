@@ -19,7 +19,7 @@
   <meta property="og:title" content="Cleanpro – Jasa Cuci Sofa &amp; Springbed No.1 Probolinggo">
   <meta property="og:description"
     content="Cleanpro – Jasa cuci sofa &amp; springbed profesional di Probolinggo. #BersihBikinBeda">
-  <meta property="og:image" content="https://cleanpro.id/assets/images/hero-section.png">
+  <meta property="og:image" content="https://cleanpro.id/assets/images/hero-section.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   <meta property="twitter:title" content="Cleanpro – Jasa Cuci Sofa &amp; Springbed No.1 Probolinggo">
   <meta property="twitter:description"
     content="Cleanpro – Jasa cuci sofa &amp; springbed profesional di Probolinggo. #BersihBikinBeda">
-  <meta property="twitter:image" content="https://cleanpro.id/assets/images/hero-section.png">
+  <meta property="twitter:image" content="https://cleanpro.id/assets/images/hero-section.webp">
 
 
 
@@ -37,7 +37,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Cleanpro – Cuci Sofa Probolinggo",
-    "image": "https://cleanpro.id/assets/images/logo-ig.png",
+    "image": "https://cleanpro.id/assets/images/logo-ig.webp",
     "description": "Cleanpro – Jasa cuci sofa & springbed profesional di Probolinggo. #BersihBikinBeda",
     "@id": "https://cleanpro.id/",
     "url": "https://cleanpro.id/",
@@ -67,12 +67,24 @@
   }
   </script>
 
-  <link rel="shortcut icon" href="assets/images/logo-ig.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/logo-ig.webp" type="image/x-icon">
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Preload Hero Images for LCP Optimization -->
+  <link rel="preload" href="assets/images/hero-section-mobile.webp" as="image" media="(max-width: 991.98px)"
+    fetchpriority="high">
+  <link rel="preload" href="assets/images/hero-section.webp" as="image" media="(min-width: 992px)" fetchpriority="high">
 
   <!-- Bootstrap CSS (local) -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <!-- Bootstrap Icons (local) -->
-  <link rel="stylesheet" href="assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/bootstrap-icons-1.13.1/bootstrap-icons.min.css" media="print"
+    onload="this.media='all'">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -80,14 +92,15 @@
 <body>
 
   <!-- ====================== NAVBAR ====================== -->
-  <nav class="site-navbar">
+  <nav class="site-navbar" aria-label="Main navigation">
     <div class="container">
       <div class="navbar-inner">
 
         <!-- Brand -->
         <a href="#" class="brand">
           <div class="brand-logo-box" style="width:48px;height:48px;">
-            <img src="assets/images/logo-ig.png" alt="Cleanpro Logo">
+            <img loading="eager" fetchpriority="high" src="assets/images/logo-ig.webp" width="48" height="48"
+              alt="Cleanpro Logo">
           </div>
           <div>
             <div class="brand-text-main">Cleanpro</div>
@@ -117,7 +130,7 @@
         <a href="https://wa.me/628564524-1289" class="btn-teal d-none d-lg-inline-flex">
           <i class="bi bi-whatsapp"></i> Chat WhatsApp
         </a>
-        <button class="hamburger" id="hamburgerBtn">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
           <i class="bi bi-list"></i>
         </button>
       </div>
@@ -166,9 +179,9 @@
         <div class="hero-img-col">
           <div class="hero-img-wrapper">
             <picture>
-              <source media="(max-width: 991.98px)" srcset="assets/images/hero-section-mobile.png">
-              <img src="assets/images/hero-section.png" alt="Teknisi Cleanpro cuci sofa profesional Probolinggo"
-                loading="eager">
+              <source media="(max-width: 991.98px)" srcset="assets/images/hero-section-mobile.webp">
+              <img src="assets/images/hero-section.webp" width="1200" height="599"
+                alt="Teknisi Cleanpro cuci sofa profesional Probolinggo" loading="eager">
             </picture>
             <div class="badge-float">
               <span class="pct">100%</span>
@@ -194,7 +207,7 @@
           <div class="col-6 col-lg-3">
             <div class="problem-card-new">
               <div class="problem-img-wrap">
-                <img src="assets/images/card-1.jpeg" alt="Sofa belang akibat salah sikat">
+                <img loading="lazy" src="assets/images/card-1.webp" alt="Sofa belang akibat salah sikat">
               </div>
               <div class="problem-text-box">
                 <h6>Sofa Belang &ldquo;Akibat&rdquo;<br>Salah Sikat</h6>
@@ -205,7 +218,7 @@
           <div class="col-6 col-lg-3">
             <div class="problem-card-new">
               <div class="problem-img-wrap">
-                <img src="assets/images/card-2.png" alt="Ompol dan tumpahan susu di kasur">
+                <img loading="lazy" src="assets/images/card-2.webp" alt="Ompol dan tumpahan susu di kasur">
               </div>
               <div class="problem-text-box">
                 <h6>Ompol &amp; Tumpahan<br>Susu di Kasur</h6>
@@ -216,7 +229,7 @@
           <div class="col-6 col-lg-3">
             <div class="problem-card-new">
               <div class="problem-img-wrap">
-                <img src="assets/images/card-3.png" alt="Bau apek saat cuaca lembap">
+                <img loading="lazy" src="assets/images/card-3.webp" alt="Bau apek saat cuaca lembap">
               </div>
               <div class="problem-text-box">
                 <h6>Bau Apek &ldquo;Misterius&rdquo;<br>Saat Cuaca Lembap</h6>
@@ -227,7 +240,7 @@
           <div class="col-6 col-lg-3">
             <div class="problem-card-new">
               <div class="problem-img-wrap">
-                <img src="assets/images/card-4.png" alt="Anak gatal-gatal setelah duduk di sofa">
+                <img loading="lazy" src="assets/images/card-4.webp" alt="Anak gatal-gatal setelah duduk di sofa">
               </div>
               <div class="problem-text-box">
                 <h6>Anak Gatal-Gatal<br>Setelah Duduk di Sofa</h6>
@@ -361,8 +374,8 @@
           <div class="col-6 col-lg-3">
             <div class="ba-card">
               <div class="ba-split-wrap">
-                <img src="assets/images/sofa-kain-kotor.png" alt="Sofa Kain Sebelum">
-                <img src="assets/images/sofa-kain-bersih.png" alt="Sofa Kain Sesudah">
+                <img loading="lazy" src="assets/images/sofa-kain-kotor.webp" alt="Sofa Kain Sebelum">
+                <img loading="lazy" src="assets/images/sofa-kain-bersih.webp" alt="Sofa Kain Sesudah">
                 <div class="ba-divider"></div>
                 <span class="ba-label before">Sebelum</span>
                 <span class="ba-label after">Sesudah</span>
@@ -376,8 +389,8 @@
           <div class="col-6 col-lg-3">
             <div class="ba-card">
               <div class="ba-split-wrap">
-                <img src="assets/images/sofa-kotor.png" alt="Sofa Sebelum">
-                <img src="assets/images/sofa-bersih.png" alt="Sofa Sesudah">
+                <img loading="lazy" src="assets/images/sofa-kotor.webp" alt="Sofa Sebelum">
+                <img loading="lazy" src="assets/images/sofa-bersih.webp" alt="Sofa Sesudah">
                 <div class="ba-divider"></div>
                 <span class="ba-label before">Sebelum</span>
                 <span class="ba-label after">Sesudah</span>
@@ -391,8 +404,8 @@
           <div class="col-6 col-lg-3">
             <div class="ba-card">
               <div class="ba-split-wrap">
-                <img src="assets/images/springbed-kotor.png" alt="Springbed Sebelum">
-                <img src="assets/images/springbed-bersih.png" alt="Springbed Sesudah">
+                <img loading="lazy" src="assets/images/springbed-kotor.webp" alt="Springbed Sebelum">
+                <img loading="lazy" src="assets/images/springbed-bersih.webp" alt="Springbed Sesudah">
                 <div class="ba-divider"></div>
                 <span class="ba-label before">Sebelum</span>
                 <span class="ba-label after">Sesudah</span>
@@ -406,8 +419,8 @@
           <div class="col-6 col-lg-3">
             <div class="ba-card">
               <div class="ba-split-wrap">
-                <img src="assets/images/sofa-minimalis-kotor.png" alt="Sofa Minimalis Sebelum">
-                <img src="assets/images/sofa-minimalis-bersih.png" alt="Sofa Minimalis Sesudah">
+                <img loading="lazy" src="assets/images/sofa-minimalis-kotor.webp" alt="Sofa Minimalis Sebelum">
+                <img loading="lazy" src="assets/images/sofa-minimalis-bersih.webp" alt="Sofa Minimalis Sesudah">
                 <div class="ba-divider"></div>
                 <span class="ba-label before">Sebelum</span>
                 <span class="ba-label after">Sesudah</span>
@@ -471,7 +484,7 @@
                 <!-- Slide 1: Cuci Sofa -->
                 <div class="price-card price-slide" style="position:relative; overflow:hidden;">
                   <div class="price-slide-label"><i class="bi bi-couch-fill"></i> Cuci Sofa</div>
-                  <div class="d-flex justify-content-between align-items-end">
+                  <div class="d-flex justify-content-between align-items-end price-slide-inner">
                     <div>
                       <p class="price-from">Mulai dari</p>
                       <div class="d-flex align-items-baseline">
@@ -484,15 +497,15 @@
                         <li><i class="bi bi-check-circle-fill"></i> Survey gratis</li>
                       </ul>
                     </div>
-                    <img src="assets/images/sofa.png" alt="Cuci Sofa"
-                      style="width:150px; object-fit:contain; flex-shrink:0; margin-bottom:-8px; margin-right:-8px;">
+                    <img loading="lazy" src="assets/images/sofa.webp" alt="Cuci Sofa"
+                      class="price-slide-img" style="object-fit:contain;">
                   </div>
                 </div>
 
                 <!-- Slide 2: Cuci Springbed -->
                 <div class="price-card price-slide" style="position:relative; overflow:hidden;">
                   <div class="price-slide-label"><i class="bi bi-stars"></i> Cuci Springbed</div>
-                  <div class="d-flex justify-content-between align-items-end">
+                  <div class="d-flex justify-content-between align-items-end price-slide-inner">
                     <div>
                       <p class="price-from">Mulai dari</p>
                       <div class="d-flex align-items-baseline">
@@ -505,15 +518,15 @@
                         <li><i class="bi bi-check-circle-fill"></i> Dikerjakan di rumah</li>
                       </ul>
                     </div>
-                    <img src="assets/images/springbed-bersih.png" alt="Cuci Springbed"
-                      style="width:150px; object-fit:cover; object-position:top; flex-shrink:0; margin-bottom:-8px; margin-right:-8px; border-radius:8px;">
+                    <img loading="lazy" src="assets/images/springbed-bersih.webp" alt="Cuci Springbed"
+                      class="price-slide-img" style="object-position:top;">
                   </div>
                 </div>
 
                 <!-- Slide 3: Cuci Jok Mobil -->
                 <div class="price-card price-slide" style="position:relative; overflow:hidden;">
                   <div class="price-slide-label"><i class="bi bi-car-front-fill"></i> Cuci Jok Mobil</div>
-                  <div class="d-flex justify-content-between align-items-end">
+                  <div class="d-flex justify-content-between align-items-end price-slide-inner">
                     <div>
                       <p class="price-from">Mulai dari</p>
                       <div class="d-flex align-items-baseline">
@@ -526,8 +539,8 @@
                         <li><i class="bi bi-check-circle-fill"></i> Survey gratis</li>
                       </ul>
                     </div>
-                    <img src="assets/images/cuci-jok-mobil.png" alt="Cuci Jok Mobil"
-                      style="width:150px; object-fit:cover; object-position:center; flex-shrink:0; margin-bottom:-8px; margin-right:-8px; border-radius:8px;">
+                    <img loading="lazy" src="assets/images/cuci-jok-mobil.webp" alt="Cuci Jok Mobil"
+                      class="price-slide-img" style="object-position:center;">
                   </div>
                 </div>
 
@@ -630,7 +643,7 @@
               <a href="#" class="text-teal fw-600" style="font-size:0.85rem; font-weight:600;">Lihat semua &rsaquo;</a>
             </div>
             <div class="art-item">
-              <img class="art-thumb" src="assets/images/sofa-kain-bersih.png"
+              <img loading="lazy" class="art-thumb" src="assets/images/sofa-kain-bersih.webp"
                 alt="Cara Membersihkan Sofa Kain di Rumah Sendiri" style="object-fit: cover;">
               <div>
                 <h6>Cara Membersihkan Sofa Kain di Rumah Sendiri</h6>
@@ -638,7 +651,7 @@
               </div>
             </div>
             <div class="art-item">
-              <img class="art-thumb" src="assets/images/sofa-bersih.png"
+              <img loading="lazy" class="art-thumb" src="assets/images/sofa-bersih.webp"
                 alt="Berapa Kali Ideal Cuci Sofa dalam Setahun?" style="object-fit: cover;">
               <div>
                 <h6>Berapa Kali Ideal Cuci Sofa dalam Setahun?</h6>
@@ -646,7 +659,7 @@
               </div>
             </div>
             <div class="art-item">
-              <img class="art-thumb" src="assets/images/sofa-kotor.png"
+              <img loading="lazy" class="art-thumb" src="assets/images/sofa-kotor.webp"
                 alt="Bahaya Tungau di Sofa untuk Kesehatan Keluarga" style="object-fit: cover;">
               <div>
                 <h6>Bahaya Tungau di Sofa untuk Kesehatan Keluarga</h6>
@@ -672,7 +685,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-md-5 d-none d-md-flex align-items-end justify-content-end">
-            <img src="assets/images/sofa-footer.png" alt="Sofa Cleanpro"
+            <img loading="lazy" src="assets/images/sofa-footer.webp" alt="Sofa Cleanpro"
               style="max-height:220px; object-fit:contain; display:block; margin-bottom:0;scale: 1.5; translate: -50px -50px;">
           </div>
         </div>
@@ -690,7 +703,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="d-flex align-items-center gap-2 mb-2">
             <div class="brand-logo-box" style="width:48px;height:48px;">
-              <img src="assets/images/logo-ig.png" alt="Cleanpro Logo">
+              <img loading="lazy" src="assets/images/logo-ig.webp" width="48" height="48" alt="Cleanpro Logo">
             </div>
             <div>
               <div class="brand-text-main" style="font-family:'Poppins',sans-serif;font-size:1.3rem;color:#009688;">
@@ -702,11 +715,11 @@
           <p class="footer-brand-text">Layanan cuci sofa, springbed, karpet &amp; jok mobil profesional di Probolinggo.
             Bersih, higienis, wangi, dan aman untuk keluarga.</p>
           <div class="footer-socials">
-            <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/clean.pro_id" target="_blank" class="social-btn"><i
-                class="bi bi-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-tiktok"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/clean.pro_id" target="_blank" class="social-btn"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
 
@@ -755,7 +768,7 @@
   </footer>
 
   <!-- Bootstrap JS (local) -->
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 
