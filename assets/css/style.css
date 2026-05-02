@@ -6,17 +6,17 @@
 :root {
   --teal: #009688;
   /* Material Teal 500 — blend hijau + cyan */
-  --teal-dark: #00796B;
+  --teal-dark: #00796b;
   /* Material Teal 700 — hover/dark */
-  --teal-deeper: #004D40;
+  --teal-deeper: #004d40;
   /* Material Teal 900 — footer */
-  --teal-light: #E0F2F1;
+  --teal-light: #e0f2f1;
   /* Material Teal 50 — light bg */
-  --teal-xlight: #F5FFFE;
+  --teal-xlight: #f5fffe;
   /* Extra light teal */
-  --accent-yellow: #FDD835;
+  --accent-yellow: #fdd835;
   /* Kuning dari logo Cleanpro */
-  --text-dark: #0D2B2E;
+  --text-dark: #0d2b2e;
   --text-body: #374151;
   --text-muted: #6b7280;
   --border-color: #e0f0ef;
@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--text-body);
   background: var(--white);
   font-size: 15px;
@@ -85,7 +85,9 @@ a {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background 0.25s, transform 0.2s;
+  transition:
+    background 0.25s,
+    transform 0.2s;
   white-space: nowrap;
 }
 
@@ -151,7 +153,8 @@ a {
   padding: 0;
   /* Smooth autohide transition */
   transform: translateY(0);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s ease;
   will-change: transform;
 }
@@ -165,7 +168,6 @@ a {
 .site-navbar.nav-hidden {
   transform: translateY(-100%);
 }
-
 
 .navbar-inner {
   display: flex;
@@ -445,13 +447,18 @@ a {
 
 /* Overlay gradient putih di tepi kiri gambar — melebur natural ke background */
 .hero-img-col::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 120px;
   height: 100%;
-  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
   z-index: 2;
   pointer-events: none;
 }
@@ -654,7 +661,6 @@ a {
   }
 }
 
-
 /* ==============================
    SECTION BASE
    ============================== */
@@ -715,7 +721,9 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 .problem-card-new:hover {
@@ -866,7 +874,9 @@ a {
   text-align: center;
   padding: 36px 20px;
   /* border-right: 1px solid var(--border-color); */
-  transition: background 0.25s, transform 0.25s;
+  transition:
+    background 0.25s,
+    transform 0.25s;
   position: relative;
 }
 
@@ -895,7 +905,10 @@ a {
   margin: 0 auto 16px;
   font-size: 1.7rem;
   color: var(--teal);
-  transition: background 0.25s, color 0.25s, transform 0.25s;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s;
 }
 
 .solution-item h6 {
@@ -925,7 +938,7 @@ a {
 
   .solution-item:nth-child(4),
   .solution-item:nth-child(5) {
-    border-top: 1px solid var(--border-color);
+    /* border-top: 1px solid var(--border-color); */
   }
 }
 
@@ -943,13 +956,13 @@ a {
   }
 
   .solution-item:nth-child(3) {
-    border-right: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
+    /* border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color); */
   }
 
   .solution-item:nth-child(4),
   .solution-item:nth-child(5) {
-    border-top: 1px solid var(--border-color);
+    /* border-top: 1px solid var(--border-color); */
   }
 
   .solution-item:nth-child(5) {
@@ -1080,14 +1093,16 @@ a {
   border: none;
   border-radius: 20px;
   padding: 28px 28px 20px;
-  box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1), 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 8px 32px rgba(0, 150, 136, 0.1),
+    0 1px 4px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
 }
 
 /* Teal accent top bar */
 .price-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1142,7 +1157,6 @@ a {
 .testi-art-section {
   background: var(--bg-gray);
 }
-
 
 .testi-card {
   background: #fff;
@@ -1223,7 +1237,7 @@ a {
 }
 
 .cta-banner::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -60px;
   right: -60px;
@@ -1235,7 +1249,7 @@ a {
 }
 
 .cta-banner::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -80px;
   left: -40px;
@@ -1251,7 +1265,7 @@ a {
   font-weight: 800;
   color: #fff;
   margin-bottom: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .cta-banner p {
@@ -1337,7 +1351,9 @@ a {
   border-radius: 50%;
   background: var(--border-color);
   cursor: pointer;
-  transition: background 0.3s, width 0.3s;
+  transition:
+    background 0.3s,
+    width 0.3s;
   display: inline-block;
 }
 
@@ -1346,7 +1362,6 @@ a {
   width: 22px;
   border-radius: 4px;
 }
-
 
 /* ==============================
    CLEANPRO — TESTI CAROUSEL
@@ -1396,7 +1411,9 @@ a {
   border-radius: 50%;
   background: var(--border-color);
   cursor: pointer;
-  transition: background 0.3s, width 0.3s;
+  transition:
+    background 0.3s,
+    width 0.3s;
   display: inline-block;
 }
 
@@ -1566,7 +1583,6 @@ footer,
 }
 
 @media (max-width: 575.98px) {
-
   /* Reduce large gaps that cause overflow */
   .d-flex.gap-5 {
     gap: 2rem !important;
@@ -1627,7 +1643,7 @@ footer,
 
 @media (max-width: 350px) {
   .hero-badge {
-    font-size: .62rem;
+    font-size: 0.62rem;
   }
 }
 
@@ -1648,7 +1664,7 @@ footer,
 
 /* Brand text — solid teal, no gradient */
 .brand-text-main {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   color: var(--teal);
   -webkit-text-fill-color: initial;
@@ -1672,7 +1688,7 @@ footer,
 }
 
 .hero-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ==============================
@@ -1715,7 +1731,7 @@ footer,
 }
 
 .ba-split-wrap .ba-divider::after {
-  content: '↔';
+  content: "↔";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1792,7 +1808,9 @@ footer,
    ============================== */
 .testi-card {
   border-color: rgba(0, 150, 136, 0.15);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 .testi-card:hover {
