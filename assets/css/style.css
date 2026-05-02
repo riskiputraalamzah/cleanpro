@@ -453,12 +453,10 @@ a {
   left: 0;
   width: 120px;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      transparent 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -1301,7 +1299,7 @@ a {
 .price-slide-img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
+  object-fit: contain;
   flex-shrink: 0;
   border-radius: 8px;
   margin-bottom: -12px;
@@ -1314,8 +1312,10 @@ a {
     align-items: flex-start !important;
     gap: 20px;
   }
+
   .price-slide-img {
-    width: calc(100% + 48px); /* Bleed into padding (24px each side) */
+    width: calc(100% + 48px);
+    /* Bleed into padding (24px each side) */
     height: 180px;
     margin: 0 -24px -24px -24px;
     border-radius: 0;
@@ -1368,8 +1368,10 @@ a {
    ============================== */
 .testi-carousel-wrap {
   overflow: hidden;
-  padding: 24px 0; /* allows top/bottom shadow to show */
-  margin: -24px 0; /* compensate for padding */
+  padding: 24px 0;
+  /* allows top/bottom shadow to show */
+  margin: -24px 0;
+  /* compensate for padding */
 }
 
 .testi-carousel {
@@ -1382,7 +1384,8 @@ a {
   flex: 0 0 100%;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0 8px; /* Adds breathing room so cards don't look cut off */
+  padding: 0 8px;
+  /* Adds breathing room so cards don't look cut off */
 }
 
 /* Quote icon */
@@ -1583,6 +1586,7 @@ footer,
 }
 
 @media (max-width: 575.98px) {
+
   /* Reduce large gaps that cause overflow */
   .d-flex.gap-5 {
     gap: 2rem !important;
