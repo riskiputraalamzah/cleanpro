@@ -10,20 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
   ---------------------------------------------------------- */
   var btn  = document.getElementById('hamburgerBtn');
   var menu = document.querySelector('.nav-menu');
+  var navbar = document.querySelector('.site-navbar');
 
   if (btn && menu) {
     btn.addEventListener('click', function () {
-      var isOpen = menu.style.display === 'flex';
-      menu.style.display        = isOpen ? 'none' : 'flex';
-      menu.style.flexDirection  = 'column';
-      menu.style.position       = 'absolute';
-      menu.style.top            = '68px';
-      menu.style.left           = '0';
-      menu.style.right          = '0';
-      menu.style.background     = '#fff';
-      menu.style.padding        = '16px 24px';
-      menu.style.borderBottom   = '1px solid #e5e7eb';
-      menu.style.zIndex         = '999';
+      var isOpen = menu.classList.toggle('is-open');
+      btn.classList.toggle('is-open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (navbar) {
+        navbar.classList.toggle('menu-open', isOpen);
+        navbar.classList.remove('nav-hidden');
+      }
     });
   }
 
@@ -40,8 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: offset, behavior: 'smooth' });
 
         // Tutup hamburger menu setelah klik link
-        if (menu && window.innerWidth <= 991.98 && menu.style.display === 'flex') {
-          menu.style.display = 'none';
+        if (menu && window.innerWidth <= 991.98 && menu.classList.contains('is-open')) {
+          menu.classList.remove('is-open');
+          if (btn) {
+            btn.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+          if (navbar) {
+            navbar.classList.remove('menu-open');
+          }
         }
       }
     });
@@ -167,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
      - Scroll ke atas  → navbar muncul kembali (slide down)
      - Di paling atas  → selalu tampil + tanpa shadow
   ---------------------------------------------------------- */
-  var navbar    = document.querySelector('.site-navbar');
   var lastScroll = 0;
   var ticking   = false;
   var SCROLL_THRESHOLD = 80; // px dari atas sebelum navbar mulai autohide
@@ -194,8 +197,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (currentScroll > lastScroll && currentScroll > SCROLL_THRESHOLD) {
       navbar.classList.add('nav-hidden');
       // Tutup menu hamburger jika sedang terbuka
-      if (menu && menu.style.display === 'flex') {
-        menu.style.display = 'none';
+      if (menu && menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        if (btn) {
+          btn.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+        navbar.classList.remove('menu-open');
       }
     }
     // Scroll ke atas → tampilkan
