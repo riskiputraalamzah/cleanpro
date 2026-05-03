@@ -50,6 +50,14 @@
       media="print"
       onload="this.media = 'all'"
     />
+    <!-- Preload Article Hero Image for LCP -->
+    <link
+      rel="preload"
+      href="../assets/images/sofa-kain-bersih.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -143,6 +151,10 @@
                   <span class="article-author">
                     <img
                       src="../assets/images/logo-mascot.webp"
+                      width="24"
+                      height="24"
+                      loading="lazy"
+                      decoding="async"
                       alt="Cleanpro Probolinggo"
                     />
                     Cleanpro Team
@@ -152,6 +164,10 @@
                 <img
                   class="article-hero-img"
                   src="../assets/images/sofa-kain-bersih.webp"
+                  width="800"
+                  height="450"
+                  loading="eager"
+                  fetchpriority="high"
                   alt="Sofa bersih dan awet di ruang keluarga"
                 />
 
@@ -173,6 +189,10 @@
                   <img
                     class="article-inline-img"
                     src="../assets/images/hero-section-mobile.webp"
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
                     alt="Proses membersihkan sofa menggunakan vacuum extractor"
                   />
 
@@ -281,6 +301,10 @@
                 <a href="/artikel/artikel-1" class="side-article">
                   <img
                     src="../assets/images/sofa-kain-bersih.webp"
+                    width="76"
+                    height="60"
+                    loading="lazy"
+                    decoding="async"
                     alt="Sofa bersih"
                   />
                   <span>
@@ -293,6 +317,10 @@
                 <a href="/artikel/artikel-1" class="side-article">
                   <img
                     src="../assets/images/kasur.webp"
+                    width="76"
+                    height="60"
+                    loading="lazy"
+                    decoding="async"
                     alt="Springbed bersih"
                   />
                   <span>
@@ -303,6 +331,10 @@
                 <a href="/artikel/artikel-1" class="side-article">
                   <img
                     src="../assets/images/sofa-kotor.webp"
+                    width="76"
+                    height="60"
+                    loading="lazy"
+                    decoding="async"
                     alt="Karpet dan sofa perlu dicuci"
                   />
                   <span>
@@ -313,6 +345,10 @@
                 <a href="/artikel/artikel-1" class="side-article">
                   <img
                     src="../assets/images/hero-section.webp"
+                    width="76"
+                    height="60"
+                    loading="lazy"
+                    decoding="async"
                     alt="Membersihkan noda sofa"
                   />
                   <span>
@@ -341,6 +377,10 @@
             <div class="comment-item">
               <img
                 src="../assets/images/logo-mascot.webp"
+                width="40"
+                height="40"
+                loading="lazy"
+                decoding="async"
                 alt="Avatar Budi Santoso"
               />
               <div>
@@ -470,7 +510,6 @@
       </div>
     </footer>
 
-    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="../assets/js/main.js" defer></script>
   </body>
 </html>

@@ -109,6 +109,117 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ----------------------------------------------------------
+     3b. BEFORE-AFTER INTERACTIVE SLIDER
+     Drag the handle to reveal before/after images
+  ---------------------------------------------------------- */
+  var allSliders = document.querySelectorAll('.ba-split-wrap');
+  allSliders.forEach(function (wrap) {
+    var handle  = wrap.querySelector('.ba-slider-handle');
+    var afterImg = wrap.querySelector('.ba-img-after');
+    if (!handle || !afterImg) return;
+
+    var dragging = false;
+
+    function updateSlider(clientX) {
+      var rect = wrap.getBoundingClientRect();
+      var x = clientX - rect.left;
+      var pct = Math.max(5, Math.min(95, (x / rect.width) * 100));
+      afterImg.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      handle.style.left = pct + '%';
+    }
+
+    // Mouse events
+    handle.addEventListener('mousedown', function (e) {
+      e.preventDefault();
+      dragging = true;
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      updateSlider(e.clientX);
+    });
+    document.addEventListener('mouseup', function () {
+      dragging = false;
+    });
+
+    // Touch events
+    handle.addEventListener('touchstart', function (e) {
+      dragging = true;
+    }, { passive: true });
+    document.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+    document.addEventListener('touchend', function () {
+      dragging = false;
+    });
+
+    // Click anywhere on the wrap to jump the slider
+    wrap.addEventListener('click', function (e) {
+      updateSlider(e.clientX);
+    });
+  });
+
+  /* ----------------------------------------------------------
+     3c. BEFORE-AFTER CAROUSEL (mobile only)
+  ---------------------------------------------------------- */
+  var baTrack = document.getElementById('baTrack');
+  var baPrev  = document.getElementById('baPrev');
+  var baNext  = document.getElementById('baNext');
+  var baDots  = document.querySelectorAll('#baDots .ba-dot');
+  var baTotal = 4;
+  var baCur   = 0;
+  var baMobile = window.matchMedia('(max-width: 767.98px)');
+
+  function baGoTo(idx) {
+    baCur = Math.max(0, Math.min(idx, baTotal - 1));
+    baTrack.style.transform = 'translateX(-' + (baCur * 100) + '%)';
+    baDots.forEach(function (d, i) {
+      d.classList.toggle('active', i === baCur);
+    });
+  }
+
+  if (baTrack && baPrev && baNext) {
+    baPrev.addEventListener('click', function () { baGoTo(baCur - 1); });
+    baNext.addEventListener('click', function () { baGoTo(baCur + 1); });
+
+    baDots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        baGoTo(parseInt(dot.dataset.idx));
+      });
+    });
+
+    // Touch swipe for carousel (only on card body, not slider handle)
+    var batx = 0;
+    var baSwipeOk = true;
+    baTrack.addEventListener('touchstart', function (e) {
+      // Don't start swipe if touching the slider handle
+      if (e.target.closest('.ba-slider-handle') || e.target.closest('.ba-split-wrap')) {
+        baSwipeOk = false;
+      } else {
+        baSwipeOk = true;
+      }
+      batx = e.touches[0].clientX;
+    }, { passive: true });
+    baTrack.addEventListener('touchend', function (e) {
+      if (!baSwipeOk) return;
+      var dx = e.changedTouches[0].clientX - batx;
+      if (Math.abs(dx) > 40) baGoTo(dx < 0 ? baCur + 1 : baCur - 1);
+    }, { passive: true });
+
+    // Reset position on resize (mobile → desktop)
+    function baResetOnResize() {
+      if (!baMobile.matches) {
+        baTrack.style.transform = '';
+        baCur = 0;
+        baDots.forEach(function (d, i) {
+          d.classList.toggle('active', i === 0);
+        });
+      }
+    }
+    window.addEventListener('resize', baResetOnResize);
+  }
+
+  /* ----------------------------------------------------------
      4. TESTIMONIAL CAROUSEL
   ---------------------------------------------------------- */
   var testiCarousel = document.getElementById('testiCarousel');

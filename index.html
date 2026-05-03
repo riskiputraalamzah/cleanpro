@@ -107,6 +107,7 @@
       rel="preload"
       href="assets/images/hero-section-mobile.webp"
       as="image"
+      type="image/webp"
       media="(max-width: 991.98px)"
       fetchpriority="high"
     />
@@ -114,6 +115,7 @@
       rel="preload"
       href="assets/images/hero-section.webp"
       as="image"
+      type="image/webp"
       media="(min-width: 992px)"
       fetchpriority="high"
     />
@@ -270,6 +272,7 @@
                   height="599"
                   alt="Teknisi Cleanpro cuci sofa profesional Probolinggo"
                   loading="eager"
+                  fetchpriority="high"
                 />
               </picture>
               <div class="badge-float">
@@ -305,7 +308,10 @@
                 <div class="problem-img-wrap">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src="assets/images/card-1.webp"
+                    width="400"
+                    height="300"
                     alt="Sofa belang akibat salah sikat"
                   />
                 </div>
@@ -320,7 +326,10 @@
                 <div class="problem-img-wrap">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src="assets/images/card-2.webp"
+                    width="400"
+                    height="300"
                     alt="Ompol dan tumpahan susu di kasur"
                   />
                 </div>
@@ -335,7 +344,10 @@
                 <div class="problem-img-wrap">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src="assets/images/card-3.webp"
+                    width="400"
+                    height="300"
                     alt="Bau apek saat cuaca lembap"
                   />
                 </div>
@@ -352,7 +364,10 @@
                 <div class="problem-img-wrap">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src="assets/images/card-4.webp"
+                    width="400"
+                    height="300"
                     alt="Anak gatal-gatal setelah duduk di sofa"
                   />
                 </div>
@@ -558,98 +573,164 @@
               Cleanpro
             </p>
           </div>
-          <div class="row g-4">
-            <!-- Sofa Kain -->
-            <div class="col-6 col-lg-3">
-              <div class="ba-card">
-                <div class="ba-split-wrap">
-                  <img
-                    loading="lazy"
-                    src="assets/images/sofa-kain-kotor.webp"
-                    alt="Sofa Kain Sebelum"
-                  />
-                  <img
-                    loading="lazy"
-                    src="assets/images/sofa-kain-bersih.webp"
-                    alt="Sofa Kain Sesudah"
-                  />
-                  <div class="ba-divider"></div>
-                  <span class="ba-label before">Sebelum</span>
-                  <span class="ba-label after">Sesudah</span>
+          <!-- Before-After Carousel / Scroll -->
+          <div class="ba-carousel-wrapper">
+            <div class="ba-scroll-track" id="baTrack">
+              <!-- Sofa Kain -->
+              <div class="ba-slide">
+                <div class="ba-card">
+                  <div class="ba-split-wrap">
+                    <img
+                      class="ba-img-before"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/sofa-kain-kotor.webp"
+                      width="400"
+                      height="300"
+                      alt="Sofa Kain Sebelum"
+                    />
+                    <img
+                      class="ba-img-after"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/sofa-kain-bersih.webp"
+                      width="400"
+                      height="300"
+                      alt="Sofa Kain Sesudah"
+                    />
+                    <div class="ba-slider-handle">
+                      <span class="ba-slider-btn">
+                        <i class="bi bi-arrows"></i>
+                      </span>
+                    </div>
+                    <span class="ba-label before">Sebelum</span>
+                    <span class="ba-label after">Sesudah</span>
+                  </div>
+                  <div class="ba-card-body">
+                    <h6>Sofa Kain</h6>
+                  </div>
                 </div>
-                <div class="ba-card-body">
-                  <h6>Sofa Kain</h6>
+              </div>
+              <!-- Sofa Biasa -->
+              <div class="ba-slide">
+                <div class="ba-card">
+                  <div class="ba-split-wrap">
+                    <img
+                      class="ba-img-before"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/sofa-kotor.webp"
+                      width="400"
+                      height="300"
+                      alt="Sofa Sebelum"
+                    />
+                    <img
+                      class="ba-img-after"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/sofa-bersih.webp"
+                      width="400"
+                      height="300"
+                      alt="Sofa Sesudah"
+                    />
+                    <div class="ba-slider-handle">
+                      <span class="ba-slider-btn">
+                        <i class="bi bi-arrows"></i>
+                      </span>
+                    </div>
+                    <span class="ba-label before">Sebelum</span>
+                    <span class="ba-label after">Sesudah</span>
+                  </div>
+                  <div class="ba-card-body">
+                    <h6>Sofa Biasa</h6>
+                  </div>
+                </div>
+              </div>
+              <!-- Springbed -->
+              <div class="ba-slide">
+                <div class="ba-card">
+                  <div class="ba-split-wrap">
+                    <img
+                      class="ba-img-before"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/springbed-kotor.webp"
+                      width="400"
+                      height="300"
+                      alt="Springbed Sebelum"
+                    />
+                    <img
+                      class="ba-img-after"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/springbed-bersih.webp"
+                      width="400"
+                      height="300"
+                      alt="Springbed Sesudah"
+                    />
+                    <div class="ba-slider-handle">
+                      <span class="ba-slider-btn">
+                        <i class="bi bi-arrows"></i>
+                      </span>
+                    </div>
+                    <span class="ba-label before">Sebelum</span>
+                    <span class="ba-label after">Sesudah</span>
+                  </div>
+                  <div class="ba-card-body">
+                    <h6>Springbed</h6>
+                  </div>
+                </div>
+              </div>
+              <!-- Sofa Minimalis -->
+              <div class="ba-slide">
+                <div class="ba-card">
+                  <div class="ba-split-wrap">
+                    <img
+                      class="ba-img-before"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/sofa-minimalis-kotor.webp"
+                      width="400"
+                      height="300"
+                      alt="Sofa Minimalis Sebelum"
+                    />
+                    <img
+                      class="ba-img-after"
+                      loading="lazy"
+                      decoding="async"
+                      src="assets/images/sofa-minimalis-bersih.webp"
+                      width="400"
+                      height="300"
+                      alt="Sofa Minimalis Sesudah"
+                    />
+                    <div class="ba-slider-handle">
+                      <span class="ba-slider-btn">
+                        <i class="bi bi-arrows"></i>
+                      </span>
+                    </div>
+                    <span class="ba-label before">Sebelum</span>
+                    <span class="ba-label after">Sesudah</span>
+                  </div>
+                  <div class="ba-card-body">
+                    <h6>Sofa Minimalis</h6>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Sofa Biasa -->
-            <div class="col-6 col-lg-3">
-              <div class="ba-card">
-                <div class="ba-split-wrap">
-                  <img
-                    loading="lazy"
-                    src="assets/images/sofa-kotor.webp"
-                    alt="Sofa Sebelum"
-                  />
-                  <img
-                    loading="lazy"
-                    src="assets/images/sofa-bersih.webp"
-                    alt="Sofa Sesudah"
-                  />
-                  <div class="ba-divider"></div>
-                  <span class="ba-label before">Sebelum</span>
-                  <span class="ba-label after">Sesudah</span>
-                </div>
-                <div class="ba-card-body">
-                  <h6>Sofa Biasa</h6>
-                </div>
+            <!-- Mobile Carousel Nav (hidden on desktop) -->
+            <div class="ba-carousel-nav" id="baNav">
+              <button class="ba-arrow ba-prev" id="baPrev" aria-label="Sebelumnya">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <div class="ba-dots" id="baDots">
+                <span class="ba-dot active" data-idx="0"></span>
+                <span class="ba-dot" data-idx="1"></span>
+                <span class="ba-dot" data-idx="2"></span>
+                <span class="ba-dot" data-idx="3"></span>
               </div>
-            </div>
-            <!-- Springbed -->
-            <div class="col-6 col-lg-3">
-              <div class="ba-card">
-                <div class="ba-split-wrap">
-                  <img
-                    loading="lazy"
-                    src="assets/images/springbed-kotor.webp"
-                    alt="Springbed Sebelum"
-                  />
-                  <img
-                    loading="lazy"
-                    src="assets/images/springbed-bersih.webp"
-                    alt="Springbed Sesudah"
-                  />
-                  <div class="ba-divider"></div>
-                  <span class="ba-label before">Sebelum</span>
-                  <span class="ba-label after">Sesudah</span>
-                </div>
-                <div class="ba-card-body">
-                  <h6>Springbed</h6>
-                </div>
-              </div>
-            </div>
-            <!-- Sofa Minimalis -->
-            <div class="col-6 col-lg-3">
-              <div class="ba-card">
-                <div class="ba-split-wrap">
-                  <img
-                    loading="lazy"
-                    src="assets/images/sofa-minimalis-kotor.webp"
-                    alt="Sofa Minimalis Sebelum"
-                  />
-                  <img
-                    loading="lazy"
-                    src="assets/images/sofa-minimalis-bersih.webp"
-                    alt="Sofa Minimalis Sesudah"
-                  />
-                  <div class="ba-divider"></div>
-                  <span class="ba-label before">Sebelum</span>
-                  <span class="ba-label after">Sesudah</span>
-                </div>
-                <div class="ba-card-body">
-                  <h6>Sofa Minimalis</h6>
-                </div>
-              </div>
+              <button class="ba-arrow ba-next" id="baNext" aria-label="Selanjutnya">
+                <i class="bi bi-chevron-right"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -771,7 +852,10 @@
                       </div>
                       <img
                         loading="lazy"
+                        decoding="async"
                         src="assets/images/sofa.webp"
+                        width="150"
+                        height="150"
                         alt="Cuci Sofa"
                         class="price-slide-img"
                         style="object-fit: contain"
@@ -813,7 +897,10 @@
                       </div>
                       <img
                         loading="lazy"
+                        decoding="async"
                         src="assets/images/kasur.webp"
+                        width="150"
+                        height="150"
                         alt="Cuci Springbed"
                         class="price-slide-img"
                         style="object-position: top"
@@ -855,7 +942,10 @@
                       </div>
                       <img
                         loading="lazy"
+                        decoding="async"
                         src="assets/images/jok-mobile-one.webp"
+                        width="150"
+                        height="150"
                         alt="Cuci Jok Mobil"
                         class="price-slide-img"
                         style="object-position: center"
@@ -1002,8 +1092,11 @@
               <div class="art-item">
                 <img
                   loading="lazy"
+                  decoding="async"
                   class="art-thumb"
                   src="assets/images/sofa-kain-bersih.webp"
+                  width="76"
+                  height="60"
                   alt="Cara Membersihkan Sofa Kain di Rumah Sendiri"
                   style="object-fit: cover"
                 />
@@ -1017,8 +1110,11 @@
               <div class="art-item">
                 <img
                   loading="lazy"
+                  decoding="async"
                   class="art-thumb"
                   src="assets/images/sofa-bersih.webp"
+                  width="76"
+                  height="60"
                   alt="Berapa Kali Ideal Cuci Sofa dalam Setahun?"
                   style="object-fit: cover"
                 />
@@ -1032,8 +1128,11 @@
               <div class="art-item">
                 <img
                   loading="lazy"
+                  decoding="async"
                   class="art-thumb"
                   src="assets/images/sofa-kotor.webp"
+                  width="76"
+                  height="60"
                   alt="Bahaya Tungau di Sofa untuk Kesehatan Keluarga"
                   style="object-fit: cover"
                 />
@@ -1069,7 +1168,10 @@
             >
               <img
                 loading="lazy"
+                decoding="async"
                 src="assets/images/sofa-footer.webp"
+                width="220"
+                height="220"
                 alt="Sofa Cleanpro"
                 style="
                   max-height: 220px;
@@ -1204,8 +1306,6 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS (local) -->
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>
